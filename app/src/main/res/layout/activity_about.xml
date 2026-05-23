@@ -35,10 +35,12 @@
 
     <TextView
         android:id="@+id/txtName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:text="Name: MUHAMMAD SYAMIL HAQIMI BIN MAHMUD SHAUQI"
+        android:layout_marginEnd="24dp"
+        android:text="Developer: MUHAMMAD SYAMIL HAQIMI BIN MAHMUD SHAUQI"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -75,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="GitHub:"
+        android:text="Application Website:"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +92,23 @@
         android:text="https://github.com/syamilshawn"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="16sp"
+        android:autoLink="web"
+        android:linksClickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <!-- Copyright Statement -->
+    <TextView
+        android:id="@+id/txtCopyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="© 2026 Muhammad Syamil Haqimi. All Rights Reserved."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

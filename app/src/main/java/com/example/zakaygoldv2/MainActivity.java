@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_TEXT,
-                    "Download my app: https://github.com/syamilshawn/zakat-gold-calculator-V2.git");
+                    "Download my app: https://github.com/syamilshawn/Zakat-GoldV2");
             startActivity(Intent.createChooser(shareIntent,"Share"));
             return true;
 
@@ -101,18 +103,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    private void shareApp() {
-        String shareBody = "Check out this Zakat Gold Calculator app! It helps you calculate zakat easily.";
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Zakat Gold Calculator");
-        intent.putExtra(Intent.EXTRA_TEXT, shareBody);
-        startActivity(Intent.createChooser(intent, "Share via"));
-    }
 
     private void calculateZakat() {
         String weightStr = editWeight.getText().toString();
