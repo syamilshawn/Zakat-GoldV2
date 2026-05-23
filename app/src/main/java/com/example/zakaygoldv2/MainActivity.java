@@ -83,23 +83,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
 
         if(item.getItemId() == R.id.action_share){
-
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
-
             shareIntent.setType("text/plain");
-
             shareIntent.putExtra(Intent.EXTRA_TEXT,
-                    "Download my app: https://github.com/syamilshawn");
-
+                    "Download my app: https://github.com/syamilshawn/zakat-gold-calculator-V2.git");
             startActivity(Intent.createChooser(shareIntent,"Share"));
+            return true;
 
+        } else if (id == R.id.action_about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+            return true;
         }
 
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void shareApp() {
@@ -148,8 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Display results in requested order: Total Value -> Payable Value -> Gold Amount -> Total Zakat
             txtTotalValue.setText(String.format(Locale.getDefault(), "Total Gold Value: RM %.2f", totalGoldValue));
-            txtPayable.setText(String.format(Locale.getDefault(), "Zakat payable value: RM %.2f", zakatPayable));
-            txtGoldZakat.setText(String.format(Locale.getDefault(), "Zakat payable gold amount: %.2fg", payableWeight));
+            txtPayable.setText(String.format(Locale.getDefault(), "Zakat payable gold value: RM %.2f", zakatPayable));
+            txtGoldZakat.setText(String.format(Locale.getDefault(), "Zakat payable gold weight: %.2fg", payableWeight));
             txtZakat.setText(String.format(Locale.getDefault(), "Total Zakat: RM %.2f", totalZakat));
 
         } catch (NumberFormatException e) {
